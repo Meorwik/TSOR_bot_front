@@ -1,4 +1,3 @@
-from . import errors
+from . import commands
+from . import routes
 from . import users
-from . import groups
-from . import channels
