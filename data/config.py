@@ -7,6 +7,8 @@ from os import environ
 class Config:
     BOT_TOKEN: Final[str] = environ.get("BOT_TOKEN")
     ADMINS: List[Union[str, int]] = environ.get("ADMINS")
+    API_URL: Final[str] = environ.get("")
+    WEB_APP_URL: Final[str] = environ.get("WEB_APP_URL")
 
 
 def read_admins(admins_str: str) -> List[Union[str, int]]:

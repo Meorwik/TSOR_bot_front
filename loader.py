@@ -8,3 +8,4 @@ from typing import Final
 bot: Final[Bot] = Bot(token=config.BOT_TOKEN, parse_mode=ParseMode.HTML)
 dp: Final[Dispatcher] = Dispatcher(storage=MemoryStorage())
 main_router: Final[Router] = Router(name="main")
+dp.include_router(main_router)
