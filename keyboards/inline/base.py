@@ -154,3 +154,6 @@ class FacadeKeyboard(InlineBuilder):
             in self._FACADE.items()
         ]
         self.add(*menu_buttons)
+
+    def get_facade(self) -> Dict:
+        return self._FACADE

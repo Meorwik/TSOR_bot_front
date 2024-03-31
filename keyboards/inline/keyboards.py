@@ -1,7 +1,7 @@
+from .callbacks import ActionCallback, RateBotCallback
 from aiogram.types.web_app_info import WebAppInfo
 from .base import InlineBuilder, FacadeKeyboard
 from aiogram.types import InlineKeyboardButton
-from .callbacks import ActionCallback
 from data.config import config
 from typing import Final, List, Dict
 
@@ -42,12 +42,13 @@ class RateBotMenuBuilder(FacadeKeyboard):
     _ADJUST_SIZES: List[int] = [5]
 
     _FACADE = {
-        "🌑": "rate - 1",
-        "🌘": "rate - 2",
-        "🌗": "rate - 3",
-        "🌖": "rate - 4",
-        "🌕": "rate - 5",
+        "🌑": RateBotCallback(rate="rate - 1").pack(),
+        "🌘": RateBotCallback(rate="rate - 2").pack(),
+        "🌗": RateBotCallback(rate="rate - 3").pack(),
+        "🌖": RateBotCallback(rate="rate - 4").pack(),
+        "🌕": RateBotCallback(rate="rate - 5").pack(),
     }
 
     def __init__(self):
         super().__init__(level="RateBotMenu")
+
